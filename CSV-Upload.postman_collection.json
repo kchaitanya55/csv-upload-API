@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "baea4d06-46e9-43e8-930f-51317ba0d1a5",
+		"name": "CSV-Upload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Duplicate ID error",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/tasne/OneDrive/Desktop/K-Projects/csv-upload-API/src/main/resources/products.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8083/upload-csv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"upload-csv"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Aug 2022 06:50:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 400,\n    \"message\": \"Duplicates Found for item with ID:1\",\n    \"timeStamp\": 1660632639972\n}"
+				}
+			]
+		},
+		{
+			"name": "File upload",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "File upload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/tasne/OneDrive/Desktop/K-Projects/GitHub/csv-upload-API/src/main/resources/products.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8083/upload-csv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"upload-csv"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Aug 2022 06:52:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"File uploaded and data saved successfully but failed for some [Product name should be more than 3  and Less than 20 characters for prodID->3]\",\n    \"timeStamp\": 1660632762856\n}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Update",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prodID\":\"1\",\r\n    \"prodName\":\"ABCDEF\",\r\n    \"ssid\":\"ABCDEFGH12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Aug 2022 06:55:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Product updated Successfully\",\n    \"timeStamp\": 1660632912834\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Data",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Get Data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/data?page=0&size=10&sort=createdBy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"data"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdBy"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Aug 2022 06:55:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productList\": [\n        {\n            \"prodID\": \"1\",\n            \"prodName\": \"ABCDEF\",\n            \"ssid\": \"ABCDEFGH12\",\n            \"createdDate\": null,\n            \"createdBy\": null,\n            \"modifiedDate\": \"2022-08-16\",\n            \"modifiedBy\": \"Admin\"\n        },\n        {\n            \"prodID\": \"2\",\n            \"prodName\": \"Cooler\",\n            \"ssid\": \"ABCDEF1235\",\n            \"createdDate\": \"2022-08-16\",\n            \"createdBy\": \"Admin\",\n            \"modifiedDate\": null,\n            \"modifiedBy\": null\n        },\n        {\n            \"prodID\": \"4\",\n            \"prodName\": \"Bed\",\n            \"ssid\": \"ABCDEF1237\",\n            \"createdDate\": \"2022-08-16\",\n            \"createdBy\": \"Admin\",\n            \"modifiedDate\": null,\n            \"modifiedBy\": null\n        },\n        {\n            \"prodID\": \"5\",\n            \"prodName\": \"Table\",\n            \"ssid\": \"ABCDEF1238\",\n            \"createdDate\": \"2022-08-16\",\n            \"createdBy\": \"Admin\",\n            \"modifiedDate\": null,\n            \"modifiedBy\": null\n        },\n        {\n            \"prodID\": \"6\",\n            \"prodName\": \"Chair\",\n            \"ssid\": \"ABCDEF1239\",\n            \"createdDate\": \"2022-08-16\",\n            \"createdBy\": \"Admin\",\n            \"modifiedDate\": null,\n            \"modifiedBy\": null\n        },\n        {\n            \"prodID\": \"7\",\n            \"prodName\": \"Cup Board\",\n            \"ssid\": \"ABCDEF1240\",\n            \"createdDate\": \"2022-08-16\",\n            \"createdBy\": \"Admin\",\n            \"modifiedDate\": null,\n            \"modifiedBy\": null\n        },\n        {\n            \"prodID\": \"8\",\n            \"prodName\": \"Water Bottle\",\n            \"ssid\": \"ABCDEF1241\",\n            \"createdDate\": \"2022-08-16\",\n            \"createdBy\": \"Admin\",\n            \"modifiedDate\": null,\n            \"modifiedBy\": null\n        },\n        {\n            \"prodID\": \"9\",\n            \"prodName\": \"Hand Bag\",\n            \"ssid\": \"ABCDEF1242\",\n            \"createdDate\": \"2022-08-16\",\n            \"createdBy\": \"Admin\",\n            \"modifiedDate\": null,\n            \"modifiedBy\": null\n        },\n        {\n            \"prodID\": \"10\",\n            \"prodName\": \"Perfume\",\n            \"ssid\": \"ABCDEF1243\",\n            \"createdDate\": \"2022-08-16\",\n            \"createdBy\": \"Admin\",\n            \"modifiedDate\": null,\n            \"modifiedBy\": null\n        }\n    ],\n    \"numberOfItems\": 9,\n    \"numberOfPages\": 1\n}"
+				}
+			]
+		}
+	]
+}
